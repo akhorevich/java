@@ -11,6 +11,6 @@ public class AverageArithmetic {
             a += number.get(i);
             md = a/number.size();
         }
-        System.out.println("Среднее арифметическое: "+md);
+        System.out.println("РЎСЂРµРґРЅРµРµ Р°СЂРёС„РјРµС‚РёС‡РµСЃРєРѕРµ: "+md);
     }
 }

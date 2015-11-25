@@ -16,6 +16,6 @@ public class AverageGeometric {
             md = Math.pow(a,(1/c));
         }
 
-        System.out.println("Среднее геометрическое: " + String.format("%.2f",md));
+        System.out.println("РЎСЂРµРґРЅРµРµ РіРµРѕРјРµС‚СЂРёС‡РµСЃРєРѕРµ: " + String.format("%.2f",md));
     }
 }

@@ -4,36 +4,23 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
-        System.out.println("������� ����� �� 1 �� 9. ����� ������ ������ �������� ���������");
-        Random r = new Random();
+        System.out.println("Для получения среднего арифметического числа введите команду по типу: \"am 2 3 4 5\", поочередно вводя числа, разделенные пробелами.\nАналогично для получения среднего геометрического числа введите команду по типу: \"gm 2 3 4 5\".\nДалее нажмите Enter");
         String a;
-        ArrayList<Integer> number = new ArrayList<Integer>();
-        do {
-            a = scan.nextLine();
-            if (isInteger(a)) {
-                number.add(Integer.valueOf(a));
-            }else {
-                System.out.println(number.toString());
-                new AverageArithmetic(number);
-                new AverageGeometric(number);
+        Scanner sc;
+        String[] b;
+        ArrayList<Integer> nums;
+        sc = new Scanner(System.in);
+        a = sc.nextLine();
 
-            }
-
-
-        }while (isInteger(a));
-
-
-    }
-    public static boolean isInteger(String s)
-    {
-        try {
-            Integer.parseInt(s);
+        b = a.replaceAll("[^\\d]", "").split("");
+        nums =  new ArrayList<Integer>();
+        for (int i = 0; i < b.length; i++) {
+            nums.add(Integer.parseInt(b[i]));
         }
-        catch (Exception e) {
-            return false;
+        if (a.contains("gm")) {
+            new AverageGeometric(nums);
+        } else if (a.contains("am")) {
+            new AverageArithmetic(nums);
         }
-
-        return true;
     }
 }
